@@ -1,6 +1,6 @@
 import React, { useEffect, useState , useContext } from 'react'
 import { Doughnut } from 'react-chartjs-2'
-import { ProductContext, ProductState } from '../context/Context';
+import { ProductContext } from '../context/Context';
 import axios from 'axios';
 
 import {
@@ -52,16 +52,24 @@ const Doughnutchart = () => {
     return count
   }
 
+  // studio product count
+  function StudioCount() {
+    let count = 0;
+    products && products.map(i => i.type === 'Studio' ? count++ : '')
+    return count
+  }
+
   const furniture_percentage = Math.round((furnitureCount() / totalProducts) * 100);
   const electric_percentage = Math.round((ElectricCount() / totalProducts) * 100);
   const electronic_percentage = Math.round((ElectronicsCount() / totalProducts) * 100);
+  const studio_percentage = Math.round((StudioCount() / totalProducts) * 100);
 
 
 
 
   const chartData = {
-    labels: ["FURNITURES", "ELECTRICS", "ELECTRONICS"],
-    data: [furniture_percentage, electric_percentage, electronic_percentage]
+    labels: ["FURNITURES", "ELECTRICS", "ELECTRONICS", "STUDIO"],
+    data: [furniture_percentage, electric_percentage, electronic_percentage, studio_percentage]
   };
 
 
@@ -70,8 +78,8 @@ const Doughnutchart = () => {
     datasets: [{
       label: 'product %',
       data: chartData.data,
-      backgroundColor: ['orangered', 'blue', 'green'],
-      borderColor: ['black', 'black', 'black']
+      backgroundColor: ['orangered', 'blue', 'green', 'brown'],
+      borderColor: ['black', 'black', 'black', 'black']
     }]
   }
 
@@ -108,6 +116,7 @@ const Doughnutchart = () => {
           <h5>FURNITURE <span>&nbsp;&nbsp; &nbsp;</span>  : <span style={{ color: "orangered" }} > {furnitureCount()} </span> </h5>
           <h5>ELECTRICS <span>&nbsp; &nbsp;&nbsp;  &nbsp;</span>  : <span style={{ color: "blue" }} > {ElectricCount()} </span> </h5>
           <h5>ELECTRONICS  <span>&nbsp;</span>: <span style={{ color: "green" }} > {ElectronicsCount()} </span> </h5>
+          <h5>STUDIO  <span>&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp;</span>: <span style={{ color: "brown" }} > {StudioCount()} </span> </h5>
         </div>
 
       </div>

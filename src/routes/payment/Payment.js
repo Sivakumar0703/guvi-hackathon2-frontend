@@ -39,7 +39,7 @@ const Payment = ({ price }) => {
         user.cartItem = [];
         localStorage.setItem('user', JSON.stringify(user));
         axios.patch(`${url}/cart/updateCart`, { updatedCart, email }) // reset cartitem in dataBase
-        navigate('/')
+        navigate('/home')
       })
       .catch(err => console.log(err))
   }

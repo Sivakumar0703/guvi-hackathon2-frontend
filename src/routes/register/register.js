@@ -2,7 +2,6 @@ import { TextField } from '@mui/material'
 import React, { useContext } from 'react'
 import axios from 'axios';
 import { toast } from 'react-toastify';
-//import Header from '../../components/header/header';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup'; // for form validation schema
 import { useFormik } from 'formik';
@@ -47,11 +46,11 @@ const Register = () => {
   async function signup(newuser) {
 
     try {
-      const result = await axios.post(`${url}/users/signup`, newuser).data
+      await axios.post(`${url}/users/signup`, newuser).data
       toast.success('Registration successful');
       navigate('/login')
     } catch (error) {
-      console.log(error)
+      toast.error('Registration failed.Try again later')
     }
 
   }
@@ -59,7 +58,7 @@ const Register = () => {
 
   return (
 
-    <div className='row signup-registration d-flex justify-content-center align-items-center' style={{ flexDirection: 'column', height: '100vh', backgroundImage: `url(${bgImage})`, height: '100vh', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
+    <div className='row signup-registration d-flex justify-content-center align-items-center' style={{ flexDirection: 'column', height: '100vh', backgroundImage: `url(${bgImage})`,  backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
 
       <div className='form col-md-6 bs ' style={{ borderRadius: "5px", position: 'absolute' }} >
 
