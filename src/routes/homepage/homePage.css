@@ -1,0 +1,176 @@
+
+
+
+.card{
+    margin-right: 25px;
+    margin-bottom:25px;
+    width:306px;
+    height:450px;
+   
+    background: rgb(2,0,36);
+    background: linear-gradient(216deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    border-radius: 5px;
+    display: inline-block;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+.main-div{
+    text-align: center;
+}
+
+/* .allCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    width:100px;
+} */
+
+.row{
+    margin-left:0 ;
+    margin-right:0 ;
+}
+
+.card-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    color:white;
+} 
+
+
+.card-img{
+    height:300px;
+    width:305px;
+   background-size: cover;
+}
+
+.card-image{
+    height:100%;
+    width:100%;
+    object-fit: cover;  
+}
+
+
+
+.cart-btn{
+    float:right;
+    height:45px;
+    margin-bottom: 5px;
+    margin-left:3px;
+}
+
+/* card-body contains cart button and view button */
+.card-body{ 
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.modal-img{
+    height:50%;
+    width:50%;
+}
+
+.modal{
+    height:600px;
+}
+
+.card-title{
+    margin: auto;
+}
+
+.modal-backdrop{
+    background-color: transparent !important;
+}
+
+.homepage{
+    margin: 8px;
+}
+
+
+
+.ant-picker-range{
+    border:2px solid black;
+}
+
+.filter-icon{
+    height:3rem !important;
+    color:blue;
+}
+
+.category{
+    border-radius: 5px;
+}
+
+.modal-container{
+    border-radius: 8px;
+    
+}
+
+
+ .view-btn{
+ 
+  margin: 3px;
+}
+
+.search-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.filter{
+    text-align: left;
+    align-items: baseline;
+    padding: 15px;
+}
+
+.search-box{
+    width:50%;
+    padding: 15px;
+}
+
+.input-search-box{
+    border-bottom: 2px solid red;;
+}
+
+
+
+/* media query */
+
+@media (max-width: 576px) { 
+    .date_time{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ant-picker-dropdown .ant-picker-panel-container .ant-picker-panels {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        direction: ltr;   
+    }
+
+    .cards-area{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        margin-right: 0;
+    }
+
+    .search-div{
+        flex-direction: column;
+    }
+
+    .ant-space{
+        gap:0 !important;
+    }
+}

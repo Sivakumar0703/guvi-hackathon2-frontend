@@ -1,0 +1,28 @@
+
+.search-box{
+    background-color: hotpink;
+    
+}
+
+.search-area{
+    display: flex;
+}
+
+.input-field{
+background-color: aqua;
+font-size: larger;
+
+border: 3px solid black;
+width:50%;
+}
+
+.search-btn{
+background-color: aqua;
+font-weight: 900;
+height:30px;
+border-radius: 50%;
+}
+
+.search-btn:hover{
+    cursor: pointer;
+}

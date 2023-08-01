@@ -1,0 +1,32 @@
+
+.footer{
+    background-color: darkgray;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    padding:3px;
+    font-size: medium;
+    line-height: 2;
+    color:white;
+}
+
+/* .footer-starts >div> h4{
+    color:orangered
+}
+
+.footer-starts{
+    display:flex;
+    justify-content: space-between;
+} */
+
+/* .footer-starts>div>p:hover{
+    cursor: pointer;
+} */
+
+.footer-section-1 , .footer-section-2 > p:hover{
+    cursor: pointer; 
+}
+
+.icon:hover{
+    cursor: pointer;
+    background-color: darkblue;
+}

@@ -1,0 +1,12 @@
+
+
+.paid-detail{
+    background-color: lavender;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}

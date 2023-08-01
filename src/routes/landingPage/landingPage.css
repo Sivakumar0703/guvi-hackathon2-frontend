@@ -1,0 +1,54 @@
+
+
+.col {
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.headContainer {
+    height: 45vh;
+    width: 100%;
+    background-image: url(./final.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.sandImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+
+.sandImage img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.name {
+    color: Tomato;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+
+@media (min-width: 992px) {
+    .sandImage {
+        height: 45vh;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 25px;
+    }
+
+}
