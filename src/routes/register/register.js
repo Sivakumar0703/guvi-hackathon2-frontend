@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import axios from 'axios';
 import { toast } from 'react-toastify';
 //import Header from '../../components/header/header';
@@ -24,7 +24,7 @@ const registerSchemaValidation = yup.object({
 const Register = () => {
 
   const navigate = useNavigate();
-  const {url} = ProductContext();
+  const {url} = useContext(ProductContext);
 
 
   // formik function
