@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material'
-import React, {useState, useContext } from 'react'
+import React, {useState, useContext, useEffect } from 'react'
 import InputAdornment from '@mui/material/InputAdornment';
 import EmailIcon from '@mui/icons-material/Email';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { ProductContext } from '../../components/context/Context';
 import bgImage from '../login/login.webp';
+import "../../App.css";
 
 
 
@@ -22,6 +23,7 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [triggerLogin , setTriggerLogin] = useState(false);
     const navigate = useNavigate();
     let {url , dispatch } = useContext(ProductContext);
     
@@ -71,6 +73,19 @@ const Login = () => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
+    function demoLogin(guestEmail){
+        setEmail(() => guestEmail);
+        setPassword('sivakumar');
+        setTriggerLogin(true);
+    }
+
+    useEffect(()=>{
+        if(triggerLogin){
+            login();
+            setTriggerLogin(false);
+        }
+    },[triggerLogin])
 
 
 
@@ -129,7 +144,11 @@ const Login = () => {
 
             <a href='/register' style={{ textDecoration: 'none', color: 'white' }} className='m-1'>Click here to create an account</a> <br /> <br />
 
-            <button className='btn btn-primary mb-3' onClick={login} >LOGIN</button>
+           <div className='btn-group'>
+           <button className='btn btn-primary mb-3 login' onClick={login} >LOGIN</button>
+            <button className='btn btn-danger mb-3 login' onClick={() => demoLogin('admin@onlinerental.com')} >ADMIN</button>
+            <button className='btn btn-success mb-3 login' onClick={() => demoLogin('guest@onlinerental.com')} >GUEST</button>
+           </div>
 
         </div>
 
